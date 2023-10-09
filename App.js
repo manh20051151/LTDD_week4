@@ -2,14 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Button, StyleSheet, Text, View } from 'react-native'; 
 
-import FirstScreen from './screen/FirstScreen'
-import a_1 from './screen/1_a'
-import b_1 from './screen/1_b'
-import c_1 from './screen/1_c'
-import d_1 from './screen/1_d'
-import e_1 from './screen/1_e'
 import a_2 from './screen/2_a'
 import b_2 from './screen/2_b'
+import c_2 from './screen/2_c'
+import tiki_Ok from './screen/Tiki_ok'
 const  Stack = createStackNavigator();
 
 const Home = ({navigation}) => {
@@ -25,6 +21,20 @@ const Home = ({navigation}) => {
             navigation.navigate('b_2');
           }}
         />
+        <Button 
+          title='c_2'
+          onPress={()=>{
+            navigation.navigate('c_2')
+          }}
+        />
+        <Button 
+        title='Tiki_Ok'
+        onPress={() =>{
+          navigation.navigate('tiki_Ok')
+        }
+
+        }
+        />
     </View>
   )
 }
@@ -37,6 +47,8 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}></Stack.Screen>
         <Stack.Screen name="a_2" component={a_2}></Stack.Screen>
         <Stack.Screen name="b_2" component={b_2}></Stack.Screen>
+        <Stack.Screen name='c_2' component={c_2}></Stack.Screen>
+        <Stack.Screen name='tiki_Ok' component={tiki_Ok}></Stack.Screen>
       </Stack.Navigator>
 
     </NavigationContainer>
